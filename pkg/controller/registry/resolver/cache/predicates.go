@@ -7,6 +7,8 @@ import (
 
 	"github.com/blang/semver/v4"
 	opregistry "github.com/operator-framework/operator-registry/pkg/registry"
+
+	"github.com/operator-framework/operator-lifecycle-manager/pkg/controller/registry/resolver/constraints"
 )
 
 type Predicate interface {
@@ -353,4 +355,41 @@ func (c countingPredicate) String() string {
 
 func CountingPredicate(p Predicate, n *int) Predicate {
 	return countingPredicate{p: p, n: n}
+}
+
+type evaluatorPred struct {
+	evaluator constraints.Evaluator
+	rule      string
+}
+
+func (ep *evaluatorPred) Test(o *Entry) bool {
+	props := make([]map[string]interface{}, len(o.Properties))
+	for i, p := range o.Properties {
+		var v interface{}
+		if err := json.Unmarshal([]byte(p.Value), &v); err != nil {
+			panic(err)
+		}
+		props[i] = map[string]interface{}{
+			"type":  p.Type,
+			"value": v,
+		}
+	}
+
+	ok, err := ep.evaluator.Evaluate(map[string]interface{}{"properties": props})
+	if err != nil {
+		panic(err)
+	}
+	return ok
+}
+
+func (ep *evaluatorPred) String() string {
+	return ep.rule
+}
+
+func EvaluatorPredicate(provider constraints.EvaluatorProvider, rule string) (Predicate, error) {
+	eval, err := provider.Evaluator(rule)
+	if err != nil {
+		return nil, err
+	}
+	return &evaluatorPred{evaluator: eval, rule: rule}, nil
 }

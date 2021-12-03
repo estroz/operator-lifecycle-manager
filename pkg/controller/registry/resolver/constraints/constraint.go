@@ -18,6 +18,8 @@ type Constraint struct {
 	All  *CompoundConstraint `json:"all,omitempty"`
 	Any  *CompoundConstraint `json:"any,omitempty"`
 	None *CompoundConstraint `json:"none,omitempty"`
+
+	Cel *Cel `json:"cel,omitempty"`
 }
 
 // CompoundConstraint holds a list of potentially nested constraints

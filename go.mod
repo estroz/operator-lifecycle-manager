@@ -14,6 +14,7 @@ require (
 	github.com/go-bindata/go-bindata/v3 v3.1.3
 	github.com/go-logr/logr v0.4.0
 	github.com/golang/mock v1.4.1
+	github.com/google/cel-go v0.9.0
 	github.com/google/go-cmp v0.5.6
 	github.com/googleapis/gnostic v0.5.5
 	github.com/itchyny/gojq v0.11.0
@@ -36,9 +37,10 @@ require (
 	github.com/spf13/cobra v1.1.3
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.7.0
-	golang.org/x/net v0.0.0-20210520170846-37e1c6afe023
+	golang.org/x/net v0.0.0-20210825183410-e898025ed96a
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac
-	google.golang.org/grpc v1.38.0
+	google.golang.org/genproto v0.0.0-20210831024726-fe130286e0e2
+	google.golang.org/grpc v1.41.0
 	gopkg.in/yaml.v2 v2.4.0
 	helm.sh/helm/v3 v3.6.1
 	k8s.io/api v0.22.0
