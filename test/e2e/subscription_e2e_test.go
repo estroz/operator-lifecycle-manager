@@ -2353,7 +2353,7 @@ var (
 		},
 		Spec: operatorsv1alpha1.ClusterServiceVersionSpec{
 			Replaces:       "",
-			Version:        version.OperatorVersion{semver.MustParse("0.1.0")},
+			Version:        version.OperatorVersion{Version: semver.MustParse("0.1.0")},
 			MinKubeVersion: "0.0.0",
 			InstallModes: []operatorsv1alpha1.InstallMode{
 				{
@@ -2383,7 +2383,7 @@ var (
 		},
 		Spec: operatorsv1alpha1.ClusterServiceVersionSpec{
 			Replaces:       outdated,
-			Version:        version.OperatorVersion{semver.MustParse("0.2.0")},
+			Version:        version.OperatorVersion{Version: semver.MustParse("0.2.0")},
 			MinKubeVersion: "0.0.0",
 			InstallModes: []operatorsv1alpha1.InstallMode{
 				{
@@ -2413,7 +2413,7 @@ var (
 		},
 		Spec: operatorsv1alpha1.ClusterServiceVersionSpec{
 			Replaces: stable,
-			Version:  version.OperatorVersion{semver.MustParse("0.1.1")},
+			Version:  version.OperatorVersion{Version: semver.MustParse("0.1.1")},
 			InstallModes: []operatorsv1alpha1.InstallMode{
 				{
 					Type:      operatorsv1alpha1.InstallModeTypeOwnNamespace,
@@ -2442,7 +2442,7 @@ var (
 		},
 		Spec: operatorsv1alpha1.ClusterServiceVersionSpec{
 			Replaces: beta,
-			Version:  version.OperatorVersion{semver.MustParse("0.3.0")},
+			Version:  version.OperatorVersion{Version: semver.MustParse("0.3.0")},
 			InstallModes: []operatorsv1alpha1.InstallMode{
 				{
 					Type:      operatorsv1alpha1.InstallModeTypeOwnNamespace,

@@ -259,7 +259,7 @@ var _ = Describe("CSVs with a Webhook", func() {
 				AdmissionReviewVersions: []string{"v1beta1", "v1"},
 				SideEffects:             &sideEffect,
 				Rules: []admissionregistrationv1.RuleWithOperations{
-					admissionregistrationv1.RuleWithOperations{
+					{
 						Operations: []admissionregistrationv1.OperationType{},
 						Rule: admissionregistrationv1.Rule{
 							APIGroups:   []string{"*"},
@@ -290,7 +290,7 @@ var _ = Describe("CSVs with a Webhook", func() {
 				AdmissionReviewVersions: []string{"v1beta1", "v1"},
 				SideEffects:             &sideEffect,
 				Rules: []admissionregistrationv1.RuleWithOperations{
-					admissionregistrationv1.RuleWithOperations{
+					{
 						Operations: []admissionregistrationv1.OperationType{},
 						Rule: admissionregistrationv1.Rule{
 							APIGroups:   []string{"operators.coreos.com"},
@@ -321,7 +321,7 @@ var _ = Describe("CSVs with a Webhook", func() {
 				AdmissionReviewVersions: []string{"v1beta1", "v1"},
 				SideEffects:             &sideEffect,
 				Rules: []admissionregistrationv1.RuleWithOperations{
-					admissionregistrationv1.RuleWithOperations{
+					{
 						Operations: []admissionregistrationv1.OperationType{},
 						Rule: admissionregistrationv1.Rule{
 							APIGroups:   []string{"admissionregistration.k8s.io"},
@@ -352,7 +352,7 @@ var _ = Describe("CSVs with a Webhook", func() {
 				AdmissionReviewVersions: []string{"v1beta1", "v1"},
 				SideEffects:             &sideEffect,
 				Rules: []admissionregistrationv1.RuleWithOperations{
-					admissionregistrationv1.RuleWithOperations{
+					{
 						Operations: []admissionregistrationv1.OperationType{
 							admissionregistrationv1.OperationAll,
 						},
@@ -384,7 +384,7 @@ var _ = Describe("CSVs with a Webhook", func() {
 				AdmissionReviewVersions: []string{"v1beta1", "v1"},
 				SideEffects:             &sideEffect,
 				Rules: []admissionregistrationv1.RuleWithOperations{
-					admissionregistrationv1.RuleWithOperations{
+					{
 						Operations: []admissionregistrationv1.OperationType{
 							admissionregistrationv1.OperationAll,
 						},
